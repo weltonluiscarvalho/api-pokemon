@@ -1,10 +1,9 @@
 package com.wellcoded.apipokemon.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -23,4 +22,8 @@ public class AbilityEntity {
 
     @Column(name = "ability_generation")
     private Integer generation;
+
+    @Transient
+    @ManyToMany(mappedBy = "abilities")
+    private List<PokemonEntity> pokemons;
 }

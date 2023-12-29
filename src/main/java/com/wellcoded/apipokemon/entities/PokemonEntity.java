@@ -1,10 +1,9 @@
 package com.wellcoded.apipokemon.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -22,5 +21,23 @@ public class PokemonEntity {
     private String name;
 
     @Column(name = "generation_id")
-    private int generation;
+    private Integer generation;
+
+    @Transient
+    @ManyToMany
+    @JoinTable(
+            name = "pokemon_type_table",
+            joinColumns = @JoinColumn(name = "pokemon_id"),
+            inverseJoinColumns = @JoinColumn(name = "type_id")
+    )
+    private List<TypeEntity> types;
+
+    @Transient
+    @ManyToMany
+    @JoinTable(
+            name = "pokemon_ability_table",
+            joinColumns = @JoinColumn(name = "pokemon_id"),
+            inverseJoinColumns = @JoinColumn(name = "ability_id")
+    )
+    private List<AbilityEntity> abilities;
 }

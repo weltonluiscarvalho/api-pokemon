@@ -1,12 +1,10 @@
 package com.wellcoded.apipokemon.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -25,4 +23,9 @@ public class GenerationEntity {
 
     @Column(name = "generation_description")
     private String description;
+
+    @Transient
+    @OneToMany
+    @JoinColumn(name = "generation_id")
+    private List<PokemonEntity> pokemons;
 }

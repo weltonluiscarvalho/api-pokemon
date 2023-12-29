@@ -1,10 +1,9 @@
 package com.wellcoded.apipokemon.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -17,4 +16,29 @@ public class TypeEntity {
 
     @Column(name = "type_name")
     private String name;
+
+    @Transient
+    @ManyToMany(mappedBy = "types")
+    private List<PokemonEntity> pokemons;
+
+    @Transient
+    private List<TypeEntity> dealsDoubleDamage;
+
+    @Transient
+    private List<TypeEntity> dealsCommonDamage;
+
+    @Transient
+    private List<TypeEntity> dealsHalfDamage;
+
+    @Transient
+    private List<TypeEntity> dealsNoDamage;
+
+    @Transient
+    private List<TypeEntity> takeDoubleDamage;
+
+    @Transient
+    private List<TypeEntity> takeHalfDamage;
+
+    @Transient
+    private List<TypeEntity> takesNoDamage;
 }
