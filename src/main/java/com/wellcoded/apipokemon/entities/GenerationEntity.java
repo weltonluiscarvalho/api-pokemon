@@ -15,13 +15,13 @@ public class GenerationEntity {
 
     @Id
     @Column(name = "generation_id")
-    private int id;
+    private Integer id;
 
     @Column(name = "release_date")
     private Date releaseDate;
 
     @Column(name = "number_of_pokemons")
-    private int numberOfPokemons;
+    private Integer numberOfPokemons;
 
     @Column(name = "generation_description")
     private String description;

@@ -13,7 +13,7 @@ public class TypeEntity {
 
     @Id
     @Column(name = "type_id")
-    private int id;
+    private Integer id;
 
     @Column(name = "type_name")
     private String name;

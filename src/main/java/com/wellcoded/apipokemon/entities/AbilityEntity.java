@@ -13,7 +13,7 @@ public class AbilityEntity {
 
     @Id
     @Column(name = "ability_id")
-    private int id;
+    private Integer id;
 
     @Column(name = "ability_name")
     private String name;
@@ -22,5 +22,5 @@ public class AbilityEntity {
     private String description;
 
     @Column(name = "ability_generation")
-    private int generation;
+    private Integer generation;
 }

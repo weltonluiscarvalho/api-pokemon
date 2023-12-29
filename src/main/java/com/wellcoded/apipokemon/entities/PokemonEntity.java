@@ -13,7 +13,7 @@ public class PokemonEntity {
 
     @Id
     @Column(name = "pokemon_id")
-    private int id;
+    private Integer id;
 
     @Column(name = "national_number")
     private int nationalNumber;
