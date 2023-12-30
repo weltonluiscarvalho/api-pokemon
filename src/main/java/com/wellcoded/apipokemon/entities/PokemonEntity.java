@@ -23,8 +23,7 @@ public class PokemonEntity {
     @Column(name = "generation_id")
     private Integer generation;
 
-    @Transient
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "pokemon_type_table",
             joinColumns = @JoinColumn(name = "pokemon_id"),
@@ -32,8 +31,7 @@ public class PokemonEntity {
     )
     private List<TypeEntity> types;
 
-    @Transient
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "pokemon_ability_table",
             joinColumns = @JoinColumn(name = "pokemon_id"),

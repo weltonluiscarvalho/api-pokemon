@@ -1,5 +1,6 @@
 package com.wellcoded.apipokemon.entities;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -8,6 +9,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "ability_table")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AbilityEntity {
 
     @Id
