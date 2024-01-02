@@ -1,7 +1,7 @@
-package com.wellcoded.apipokemon.controller;
+package com.wellcoded.apipokemon.controllers;
 
-import com.wellcoded.apipokemon.dto.PokemonDTO;
-import com.wellcoded.apipokemon.service.PokemonService;
+import com.wellcoded.apipokemon.dtos.PokemonDTO;
+import com.wellcoded.apipokemon.services.PokemonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,8 +16,8 @@ public class PokemonController {
     @Autowired
     private PokemonService pokemonService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<PokemonDTO> searchPokemonById(@PathVariable String id) {
-        return ResponseEntity.ok(pokemonService.findPokemonById(Integer.parseInt(id)));
+    @GetMapping("/{nationalNumber}")
+    public ResponseEntity<PokemonDTO> searchPokemonByNationalNumber(@PathVariable String nationalNumber) {
+        return ResponseEntity.ok(pokemonService.findPokemonByNationalNumber(Integer.parseInt(nationalNumber)));
     }
 }

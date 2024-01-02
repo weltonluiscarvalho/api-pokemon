@@ -20,8 +20,9 @@ public class PokemonEntity {
     @Column(name = "pokemon_name")
     private String name;
 
-    @Column(name = "generation_id")
-    private Integer generation;
+    @ManyToOne
+    @JoinColumn(name = "generation_id", referencedColumnName = "generation_id")
+    private GenerationEntity generation;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(

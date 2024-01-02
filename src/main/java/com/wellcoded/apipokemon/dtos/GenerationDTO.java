@@ -1,4 +1,4 @@
-package com.wellcoded.apipokemon.dto;
+package com.wellcoded.apipokemon.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.wellcoded.apipokemon.entities.PokemonEntity;
