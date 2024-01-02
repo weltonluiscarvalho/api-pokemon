@@ -12,9 +12,6 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TypeDTO {
 
-    @JsonProperty("type_id")
-    private Integer id;
-
     @JsonProperty("type_name")
     private String name;
 
