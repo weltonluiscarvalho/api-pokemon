@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface PokemonRepository extends JpaRepository<PokemonEntity, Integer> {
 
     Optional<PokemonEntity> findByNationalNumber(Integer nationalNumber);
+
+    Optional<PokemonEntity> findByName(String name);
 }

@@ -24,4 +24,11 @@ public class PokemonService {
 
         return dbResult.map(entity -> mapper.INSTANCE.entityToDTO(entity)).orElseThrow();
     }
+
+    public PokemonDTO findPokemonByName(String name) {
+
+        Optional<PokemonEntity> dbResult = pokemonRepository.findByName(name);
+
+        return dbResult.map(entity -> mapper.INSTANCE.entityToDTO(entity)).orElseThrow();
+    }
 }
